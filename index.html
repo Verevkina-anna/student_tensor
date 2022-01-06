@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="keywords" content="Студенты, одноклассники, уроки">
+      <meta name="author" content="Verevkina Anna">
+      <title>TENSOR SCHOOL</title>
+      <link rel="stylesheet" href="./styles/styles.css">
+      <script src="./script/main.js" defer></script>
+   </head>
+   <body>
+      <div class="container">
+         <header class="header">
+            <img src="./src/logo03.png" alt="Логотип" class="header_logo">
+            <h1 class="header_title">TENSOR SCHOOL</h1>
+         </header>
+         <body>
+            <section class="students"></section>
+         </body>
+      </div>
+      <template id="studentTemplate">
+         <article class="student">
+            <img src="" alt="" class="avatar_url">
+            <div class="card_info"> 
+                 <h3 class="student_name"></h3>
+                  <div class="student_info"> 
+                     <div class="student_university"></div>
+                     <div class="student_course"></div> 
+                     <div class="student_city"></div>
+               </div> 
+            </div> 
+            <a href="#" class="button button_delete"></a>
+            <a href="#" class="button button_edit"></a> 
+         </article>
+      </template>
+      <div id="studentPopup" class="overlay">
+         <div class="popup">
+            <h2>Введите информацию о студенте</h2>
+            <a class="popup_close" href="#">&times;</a>
+            <form class="student-form">
+               <div class="form-group">
+                  <label class="form-group_label" for="name">Фамилия и имя: </label>
+                  <div class="form-group_container">
+                     <input name="name" class="form-group_input" type="text" minlength="2" required />
+                     <span class="form-group_input-error"></span>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="form-group_label" for="university">Университет: </label>
+                  <div class="form-group_container">
+                     <input name="university" class="form-group_input" type="text" minlength="3" required />
+                     <span class="form-group_input-error"></span>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="form-group_label" for="course">Курс: </label>
+                  <div class="form-group_container">
+                     <input name="course" class="form-group_input" type="range" min="1" max="6" required />
+                     <span class="form-group_input-error"></span>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="form-group_label" for="city">Город: </label>
+                  <div class="form-group_container">
+                     <input name="city" class="form-group_input" type="text" minlength="2" required />
+                     <span class="form-group_input-error"></span>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="form-group_label" for="avatar_url">URL фото: </label>
+                  <div class="form-group_container">
+                     <input name="avatar_url" class="form-group_input" type="url" required />
+                     <span class="form-group_input-error"></span>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <button class="my-form_submit" type="submit">Ок</button>
+               </div>
+            </form>
+         </div>
+      </div> 
+   </body>
+</html>
+<!-- <!DOCTYPE html>
+<html lang="ru">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="keywords" content="Студенты, одноклассники, уроки">
+      <meta name="author" content="Verevkina Anna">
+      <title>TENSOR SCHOOL</title>
+      <link rel="stylesheet" href="./styles/styles.css">
+      <script src="./script/main.js" defer></script>
+   </head>
+   <body>
+      <div class="container">
+         <header class="header">
+            <img src="./src/logo03.png" alt="Логотип" class="header_logo">
+            <h1 class="header_title">TENSOR SCHOOL</h1>
+         </header>
+         <body>
+            <section class="students"></section>
+         </body>
+      </div> -->
+       <!-- <template id="cardTemplate">
+         <div class="student_info">
+         	<div class="card_info">
+         		<h3 class="student_name"></h3>
+         		<div class="student_info">
+	         		<img src="./src/location.png" alt="гео">
+	         		<div class="student_city">  </div>
+         		</div>
+         		<div class="student_info">
+         			<img src="./src/university.png" alt="уни">
+    		<div class="student_university"> </div>
+	         		<div class="student_course"> курс</div>
+         		</div>
+         		<div class="student_info">
+         			<img src="./src/telef.png" alt="тел">
+         			<div>+7 999 999 99 99</div>
+         		</div>
+         		<div class="student_info">
+         			<img src="./src/dog.png" alt="соб">
+         			<div>ivanova@mail.ru</div>
+         		</div>
+         	</div>
+         	<div class="card_info">
+         		<img src="" alt="" class="avatar_url">
+         		<div class="student_info">
+         			<img src="./src/vk.png" alt="vk">
+         			<img src="./src/facebook.png" alt="fac">
+         			<img src="./src/whatsapp.png" alt="wat">
+         			<img src="./src/telegram.png" alt="tel">
+         		</div>
+         	</div>
+         </div>
+      </template> -->
+      <!-- <template id="studentTemplate">
+         <article class="student">
+            <img src="" alt="" class="avatar_url">
+            <div class="card_info"> 
+                 <h3 class="student_name"></h3>
+                  <div class="student_info"> 
+                     <div class="student_university"></div>
+                     <div class="student_course"></div> 
+                     <div class="student_city"></div>
+               </div> 
+            </div> 
+            <a href="#" class="button button_delete"></a>
+             <a href="#" class="button button_edit"></a> 
+         </article>
+      </template>
+
+       <div id="studentPopup" class="overlay">
+         <div class="popup">
+            <h2>Введите информацию о студенте</h2>
+            <a class="popup_close" href="#">&times;</a>
+            <form class="student-form">
+               <div class="form-group">
+                  <label class="form-group_label" for="name">Фамилия и имя: </label>
+                  <div class="form-group_container">
+                     <input name="name" class="form-group_input" type="text" minlength="2" required />
+                     <span class="form-group_input-error"></span>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="form-group_label" for="university">Университет: </label>
+                  <div class="form-group_container">
+                     <input name="university" class="form-group_input" type="text" minlength="3" required />
+                     <span class="form-group_input-error"></span>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="form-group_label" for="course">Курс: </label>
+                  <div class="form-group_container">
+                     <input name="course" class="form-group_input" type="range" min="1" max="6" required />
+                     <span class="form-group_input-error"></span>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="form-group_label" for="city">Город: </label>
+                  <div class="form-group_container">
+                     <input name="city" class="form-group_input" type="text" minlength="2" required />
+                     <span class="form-group_input-error"></span>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="form-group_label" for="avatar_url">URL фото: </label>
+                  <div class="form-group_container">
+                     <input name="avatar_url" class="form-group_input" type="url" required />
+                     <span class="form-group_input-error"></span>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <button class="my-form_submit" type="submit">Ок</button>
+               </div>
+            </form>
+         </div>
+      </div> 
+   </body>
+</html> -->

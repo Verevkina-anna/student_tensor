@@ -1,0 +1,257 @@
+body {
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   margin: 0;
+}
+
+.header {
+   display: flex;
+   align-items: center;
+   margin-top: 10px;
+   margin-bottom: 30px;
+}
+
+.header_title {
+   font-family: TensorFont;
+   font-style: normal;
+   margin: 0px 12px;
+   color: #333333;
+}
+
+.header_logo {
+   width: 41px;
+   height: 41px;
+}
+
+.container {
+   margin: 0 auto;
+   padding: 0 10px;
+}
+
+.students {
+   display: grid;
+   grid-template-rows: 20% 20% 20% 20% 20%;
+  
+}
+
+.student {
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   padding: 12px 12px;
+   box-shadow: 0px 0px 10px #E1EDF5;
+   margin-bottom: 10px;
+
+}
+
+.student_info{
+    display: flex;
+    flex-direction: row;
+}
+.card_info{
+   width: 40%;
+   display: flex;
+   flex-direction: column;
+}
+
+.avatar_url {
+   width:80px;
+   height: 80px;
+   object-fit: cover;
+   margin-bottom: 16px;
+   margin-right: 16px;
+}
+
+
+
+.student_name {
+   margin: 0;
+   margin-bottom: 16px;
+}
+.student_university {
+  
+   margin: 0px 2px;
+}
+.student_course{
+   margin: 0px 5px;
+}
+.student_city{
+   margin: 0;
+}
+img{
+   margin-right: 5px;
+}
+
+.button {
+   top: 20px;
+   width: 40px;
+   height: 40px;
+   background-color: #436497;
+
+   background-position: center center;
+   background-size: 30px 30px;
+   background-repeat: no-repeat;
+   cursor: pointer;
+}
+
+.button_delete {
+   left: 20px;
+   background-image: url("../src/Vector.png");
+}
+
+.button_edit {
+   left: 80px;
+   background-image: url("../src/edit.png");
+}
+
+@media screen and (min-width: 768px) {
+   .button_delete,
+   .button_edit {
+      display: none;
+   }
+
+   .container {
+      padding: 0 30px;
+   }
+
+   /*.students {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+   }*/
+
+   .student:hover .button_delete,
+   .student:hover .button_edit {
+      display: block;
+   }
+}
+
+@media screen and (min-width: 1080px) {
+   .container {
+      max-width: 1200px;
+      padding: 0 30px;
+   }
+
+   .students {
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+   }
+}
+
+.overlay {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background: #7388A8;
+   transition: opacity 500ms;
+   visibility: hidden;
+   opacity: 0;
+}
+
+.overlay.opened {
+   visibility: visible;
+   opacity: 1;
+}
+
+.popup {
+   margin: 70px auto;
+   padding: 20px;
+   background: #fff;
+   border-radius: 5px;
+   width: 600px;
+   max-width: 100vw;
+   position: relative;
+   transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+   margin-top: 0;
+   color: #333;
+   font-family:  Tahoma, Arial, sans-serif;
+}
+
+.popup_close {
+   position: absolute;
+   top: 20px;
+   right: 30px;
+   transition: all 200ms;
+   font-size: 30px;
+   font-weight: bold;
+   text-decoration: none;
+   color: #333;
+}
+
+.popup_close:hover {
+   color: #7A91B5;
+}
+
+@media screen and (max-width: 700px) {
+   .box {
+      width: 70%;
+   }
+   .popup {
+      width: 70%;
+   }
+   .header {
+      background-color: #1F4A6B;
+   }
+   
+   .header_title {
+      font-family: TensorFont;
+      font-style: normal;
+      margin: 0px 12px;
+      color: #ffffff;
+   }
+   .student_city{
+      visibility: hidden;
+   }
+}
+
+.student-form {
+   display: flex;
+   flex-direction: column;
+}
+
+.form-group {
+   display: flex;
+   margin-bottom: 10px;
+   align-items: baseline;
+}
+
+.form-group_label {
+   width: 130px;
+   font-size: 16px;
+
+   margin-right: 10px;
+   text-align: right;
+   flex-shrink: 0;
+   flex-grow: 0;
+}
+
+.form-group_container {
+   display: flex;
+   flex-direction: column;
+   flex-grow: 1;
+}
+
+.form-group_input-error {
+   display: block;
+   margin-top: 2px;
+   height: 12px;
+   font-size: 12px;
+   color: red;
+}
+
+.form-group_input {
+   width: 100%;
+   line-height: 30px;
+   font-size: 16px;
+   padding: 0 6px;
+}
+
+.my-form_submit {
+   width: 100%;
+   height: 40px;
+   font-size: 20px;
+   margin: auto;
+}

@@ -1,0 +1,12 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Анна Волкова",
+      "university": "СибГУТИ", 
+      "course":2,
+      "city": "Новосибирск",
+      "avatar_url":"https://avatars.mds.yandex.net/get-zen_doc/147743/pub_5b9a260de44ba100abfd1bf1_5b9a261a87dcc100ae6d2872/scale_1200"
+    }
+  ]
+}
