@@ -41,23 +41,6 @@ def students_list():
 	"""
 	return db_helper.execute_query(sql)
 
-# kitties
-
-@app.get('/kitties')
-def kitties_list():
-	"""
-	Получение списка 
-	"""
-	sql="""
-		select
-			id,
-			name,
-			university,
-			avatar_url as avatarUrl
-		from students
-	"""
-	return db_helper.execute_query(sql)
-
 @app.put('/students/{id}')
 def update(id: int , payload: Student):
 	"""
@@ -120,14 +103,13 @@ def create (payload: Student):
 		payload.city, 
 		payload.avatar_url
 	)
-
 @app.delete('/students/{id}')
-def delete(payload: Student):
-	"""
-	 удаление студента
-	"""
-	sql= 'delete from students where id= %s::int'
-	db_helper.execute_query(sql, id)
+def delete(id: int):
+    """
+    Удаление карточки.
+    """
+    sql = 'delete from students where id = %s::int'
+    db_helper.execute_query(sql, id)
 
 if __name__== '__main__':
 	uvicorn.run (app,host=const.APP_IP, port= const.APP_PORT)
