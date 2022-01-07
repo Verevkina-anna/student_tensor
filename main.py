@@ -8,11 +8,11 @@ import uvicorn
 
 class Student(BaseModel):
 	id: int=None
-	name:str
-	university:str
-	course:int
-	city:str
-	avatar_url:str
+	name: str
+	university: str
+	course: int
+	city: str
+	avatar_url: str
 
 		
 app= FastAPI()
@@ -42,24 +42,24 @@ def students_list():
 	return db_helper.execute_query(sql)
 
 @app.put('/students/{id}')
-def update(id: int , payload: Student):
-	"""
-	обновление 
-	"""
-	sql= """
-		update students
-		set name=%s::text, university= %s::text, course= %s::int, city%s::text, avatar_url= %s::text
-		where id= %s::int
-	 """
-	db_helper.execute_query(
-		sql,
-		payload.name, 
-		payload.university, 
+def update(id: int, payload: Student):
+    """
+    Обновление карточки.
+    """
+    sql = """
+        update students
+        set name = %s::text, university = %s::text, course = %s::int, city = %s::text, avatar_url = %s::text
+        where id = %s::int
+    """
+    db_helper.execute_query(
+        sql,
+        payload.name,
+        payload.university,
 		payload.course,
 		payload.city,
-		payload.avatar_url,
-		payload.id
-	)
+        payload.avatar_url,
+        payload.id
+    )
 	
 @app.get('/student/{id}')
 def student_card(id: int , payload: Student):
@@ -92,8 +92,8 @@ def create (payload: Student):
 	 Создание студента
 	"""
 	sql="""
-		insert intgo students (name, university,course, city, avatar_url)
-		values  %s::text, %s::text,%s::int,%s::text, %s::text)
+		insert into students (name, university, course, city, avatar_url)
+		values  (%s::text, %s::text, %s::int ,%s::text, %s::text)
 	 """
 	db_helper.execute_query(
 		sql,

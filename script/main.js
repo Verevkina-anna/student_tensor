@@ -127,9 +127,9 @@ const renderItem = (item) => {
          const data = {
             id: item.id,
             name: event.target.elements[0].value,
-            university:event.target.elements[1].value,
-            //course: event.target.elements[2].value,
-            course: item.course,
+            university: event.target.elements[1].value,
+            course: event.target.elements[2].value,
+            //course: item.course,
             city: event.target.elements[3].value,
             avatar_url: event.target.elements[4].value
          };
@@ -141,7 +141,7 @@ const renderItem = (item) => {
       }, {
          name: item.name,
          university: item.university,
-         course:item.course,
+         course: item.course,
          city: item.city,
          avatar_url: item.avatar_url
       });
@@ -156,11 +156,12 @@ $studentButton.addEventListener('click', () => {
    studentForm.init((event) => {
       event.preventDefault();
       const data = {
-         name: item.name,
-         university: item.university,
-         course:item.course,
-         city: item.city,
-         avatar_url: item.avatar_url
+         name: event.target.elements[0].value,
+         university: event.target.elements[1].value,
+         course:event.target.elements[2].value,
+         //course: item.course,
+         city: event.target.elements[3].value,
+         avatar_url: event.target.elements[4].value,
       };
 
       studentApi.createItem(data).then(() => {
