@@ -61,7 +61,7 @@ def update(id: int, payload: Student):
         payload.id
     )
 	
-@app.get('/student/{id}')
+@app.get('/students/{id}')
 def student_card(id: int , payload: Student):
 	"""
 	Просмотр  
