@@ -1,6 +1,7 @@
 body {
    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
    margin: 0;
+   color: #1F4A6B ;
 }
 
 .header {
@@ -10,16 +11,29 @@ body {
    margin-bottom: 30px;
 }
 
-.header_title {
+.header_title_big {
+   position: absolute;
+   font-weight: bold;
+   font-size: 2em;
+   padding-left: 150px;
    font-family: TensorFont;
    font-style: normal;
    margin: 0px 12px;
    color: #333333;
+   white-space:pre;
+}
+.header_title_small{
+   position: relative;
+   white-space:pre;
+   visibility: hidden;
+   color: #fff;
 }
 
 .header_logo {
+   margin-right: 10px;
    width: 41px;
    height: 41px;
+   background-image: url(../src/logo03.png);
 }
 
 .container {
@@ -29,7 +43,7 @@ body {
 
 .students {
    display: grid;
-   grid-template-rows: 20% 20% 20% 20% 20%;
+   /* grid-template-rows: 8% ; */
   
 }
 
@@ -46,8 +60,8 @@ body {
 .student_info{
    margin-left: 5px;
    margin-bottom: 5px;
-    display: flex;
-    flex-direction: row;
+   display: flex;
+   flex-direction: row;
 }
 .card_info{
    width: 40%;
@@ -79,19 +93,28 @@ card-form{
 }
 .student_course{
    margin: 0px 5px;
+   white-space:pre;
 }
 .student_city{
    margin: 0;
 }
 img{
+   border-radius: 10px;
+   width: 104px;
+   height: 104px;
    margin-right: 5px;
+   margin-left: 5px;
+}
+.icon{
+   width: 14px;
+   height: 14px;
 }
 
 .button {
    top: 20px;
    width: 35px;
    height: 35px;
-   background-color: #E1EDF5;
+   /* background-color: #E1EDF5; */
 
    background-position: center center;
    background-size: 30px 30px;
@@ -125,15 +148,13 @@ img{
       padding: 0 30px;
    }
 
-   /*.students {
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-   }*/
-
    .student:hover .button_delete,
    .student:hover .button_edit, 
    .student:hover .button_card {
       display: block;
+   }
+   .header_title_big{
+      position: relative;
    }
 }
 
@@ -147,6 +168,7 @@ img{
       grid-template-columns: 1fr 1fr;
       gap: 30px;
    }
+   
 }
 
 .overlay {
@@ -209,15 +231,20 @@ img{
       background-color: #1F4A6B;
    }
    
-   .header_title {
-      font-family: TensorFont;
-      font-style: normal;
-      margin: 0px 12px;
-      color: #ffffff;
+   .header_title_big {
+      visibility: hidden;  
+   }
+   .header_title_small {
+      color: #fff;
+      visibility: visible;  
    }
    .student_city{
       visibility: hidden;
    }
+   .header_logo{
+      background-image: url("../src/polocki.png");
+   }
+  
 }
 
 .student-form {
@@ -269,6 +296,7 @@ img{
    margin: auto;
 }
  input{
+    color:#1F4A6B;
     border: 0;
     align-items: center;
  }

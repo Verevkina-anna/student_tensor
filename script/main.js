@@ -130,16 +130,14 @@ const renderItem = (item) => {
    const $buttonDelete = $studentEl.querySelector('.button_delete');
    const $buttonEdit = $studentEl.querySelector('.button_edit');
    const $cardButton = $studentEl.querySelector('.button_card');
-
-   $studentEl.querySelector('.student_name').textContent = item.name;
+   
+   $studentEl.querySelector('.student_name').textContent = item.name.split(" ")[1]+" "+item.name.split(" ")[0];
    $studentEl.querySelector('.student_university').textContent = item.university;
    $studentEl.querySelector('.student_course').textContent=item.course+" курс ";
    $studentEl.querySelector('.student_city').textContent=" г. "+item.city;
    $studentImg.setAttribute('src', item.avatar_url);
    $studentImg.setAttribute('alt', item.name);
 
-  
-  
 
    $studentsSection.appendChild($studentEl);
 
@@ -181,8 +179,9 @@ const renderItem = (item) => {
          telefon: item.telefon
       });
    });
-   // card
 
+
+   // card
  $cardButton.addEventListener('click', (event) => {
    showStudentCard();
     cardForm.init((event) => {
@@ -202,17 +201,15 @@ const renderItem = (item) => {
        hideStudentCard();
     },{
       email: item.email,
-      name: item.name,
-      university: item.university,
-      course: item.course,
+      name: item.name.split(" ")[0],
+      university: item.university+", "+item.course+" курс",
       telefon: item.telefon,
       city: item.city,
-      avatar_url: item.avatar_url
-     
+      avatar_url: item.name.split(" ")[1]+" "+item.name.split(" ")[2],
+      course: item.course
       
-   });
+   });    
  });
-//
 }
 
 studentApi.getItems().then((data) => renderList(data));

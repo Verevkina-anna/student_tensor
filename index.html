@@ -12,8 +12,9 @@
    <body>
       <div class="container">
          <header class="header">
-            <img src="./src/logo03.png" alt="Логотип" class="header_logo">
-            <h1 class="header_title">TENSOR SCHOOL</h1>
+            <div class="header_logo"></div>
+            <div class="header_title_small"> <h2>Мои одноклассники</h2></div>
+            <div class="header_title_big">TENSOR SCHOOL</div>
          </header>
          <body>
             <section class="students"></section>
@@ -40,41 +41,35 @@
          <form class="card-form">
             <div class="student_info">
                <div class="card_info">
-                  <input name="name" class="form-group_input" type="text" readonly="readonly"/>
+                  <input name="name" class="form-group_input" type="text" readonly="readonly" style="color: black; font-weight: bold;"/>
+                  <input name="avatar_url" class="form-group_input" type="text" readonly="readonly" style="color: black;"/>
                   <div class="student_info">
-                     <img src="./src/location.png" alt="гео">
+                     <img class="icon" src="./src/location.png" alt="гео">
                      <input name="city" class="form-group_input" type="text" readonly="readonly"/>
                   </div>
                   <div class="student_info">
-                        <img src="./src/university.png" alt="уни">
+                        <img class="icon" src="./src/university.png" alt="уни">
                         <input name="university" type="text"readonly="readonly" maxlength="5"/>
                    </div>
-                  <div class="student_info"> 
-                        <img src="./src/course.png" alt="курс"> курс:
-                        <input name="course"  readonly="readonly" maxlength="1"/>
-                  </div>
                    <div class="student_info">
-                     <img src="./src/telef.png" alt="тел">
+                     <img class="icon" src="./src/telef.png" alt="тел">
                      <input name="email"/>
                   </div>
                   <div class="student_info">
-                     <img src="./src/dog.png" alt="соб">
+                     <img class="icon" src="./src/dog.png" alt="соб">
                      <input name="telefon"/>
                   </div>
                </div>
                <div class="card_info">
                   <img src="https://w7.pngwing.com/pngs/263/201/png-transparent-computer-icons-avatar-admission-miscellaneous-logo-silhouette.png">
                   <div class="student_info">
-                     <img src="./src/vk.png" alt="vk">
-                     <img src="./src/facebook.png" alt="fac">
-                     <img src="./src/whatsapp.png" alt="wat">
-                     <img src="./src/telegram.png" alt="tel">
+                     <img class="icon" src="./src/vk.png" alt="vk">
+                     <img class="icon" src="./src/facebook.png" alt="fac">
+                     <img class="icon" src="./src/whatsapp.png" alt="wat">
+                     <img class="icon" src="./src/telegram.png" alt="tel">
                   </div>
                </div>
             </div>
-            <!-- <div class="form-group">
-               <button class="my-form_submit" type="submit">Ок</button>
-            </div> -->
          </form>
       </div>
       <div id="studentPopup" class="overlay">
@@ -83,7 +78,7 @@
             <a class="popup_close" href="#">&times;</a>
             <form class="student-form">
                <div class="form-group">
-                  <label class="form-group_label" for="name">Фамилия и имя: </label>
+                  <label class="form-group_label" for="name">ФИО: </label>
                   <div class="form-group_container">
                      <input name="name" class="form-group_input" type="text" minlength="2" required />
                      <span class="form-group_input-error"></span>
