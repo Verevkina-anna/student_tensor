@@ -13,6 +13,8 @@ class Student(BaseModel):
 	course: int
 	city: str
 	avatar_url: str
+	email: str
+	telefon: str
 
 		
 app= FastAPI()
@@ -36,7 +38,9 @@ def students_list():
 			university,
 			course,
 			city,
-			avatar_url 
+			avatar_url,
+			email,
+			telefon
 		from students
 	"""
 	return db_helper.execute_query(sql)
@@ -48,7 +52,7 @@ def update(id: int, payload: Student):
     """
     sql = """
         update students
-        set name = %s::text, university = %s::text, course = %s::int, city = %s::text, avatar_url = %s::text
+        set name = %s::text, university = %s::text, course = %s::int, city = %s::text, avatar_url = %s::text, email = %s::text, telefon = %s::text
         where id = %s::int
     """
     db_helper.execute_query(
@@ -58,6 +62,8 @@ def update(id: int, payload: Student):
 		payload.course,
 		payload.city,
         payload.avatar_url,
+		payload.email,
+		payload.telefon,
         payload.id
     )
 	
@@ -73,7 +79,9 @@ def student_card(id: int , payload: Student):
 			university,
 			course,
 			city,
-			avatar_url
+			avatar_url,
+			email,
+			telefon
 		from students
 	"""
 	db_helper.execute_query(
@@ -83,6 +91,8 @@ def student_card(id: int , payload: Student):
 		payload.course,
 		payload.city,
 		payload.avatar_url,
+		payload.email,
+		payload.telefon,
 		payload.id
 	)
 
@@ -92,8 +102,8 @@ def create (payload: Student):
 	 Создание студента
 	"""
 	sql="""
-		insert into students (name, university, course, city, avatar_url)
-		values  (%s::text, %s::text, %s::int ,%s::text, %s::text)
+		insert into students (name, university, course, city, avatar_url, email, telefon)
+		values  (%s::text, %s::text, %s::int ,%s::text, %s::text, %s::text, %s::text)
 	 """
 	db_helper.execute_query(
 		sql,
@@ -101,7 +111,9 @@ def create (payload: Student):
 		payload.university, 
 		payload.course,
 		payload.city, 
-		payload.avatar_url
+		payload.avatar_url,
+		payload.email,
+		payload.telefon
 	)
 @app.delete('/students/{id}')
 def delete(id: int):

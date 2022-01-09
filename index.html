@@ -36,6 +36,7 @@
          </article>
       </template>
       <div id="studentCard" class="overlay">
+         <a class="card_close" href="#">&times;</a>
          <form class="card-form">
             <div class="student_info">
                <div class="card_info">
@@ -54,11 +55,11 @@
                   </div>
                    <div class="student_info">
                      <img src="./src/telef.png" alt="тел">
-                     <div>+7 999 999 99 99</div>
+                     <input name="email"/>
                   </div>
                   <div class="student_info">
                      <img src="./src/dog.png" alt="соб">
-                     <div>ivanova@mail.ru</div>
+                     <input name="telefon"/>
                   </div>
                </div>
                <div class="card_info">
@@ -71,9 +72,9 @@
                   </div>
                </div>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                <button class="my-form_submit" type="submit">Ок</button>
-            </div>
+            </div> -->
          </form>
       </div>
       <div id="studentPopup" class="overlay">
@@ -113,6 +114,20 @@
                   <label class="form-group_label" for="avatar_url">URL фото:</label>
                   <div class="form-group_container">
                      <input name="avatar_url" class="form-group_input" type="url" required />
+                     <span class="form-group_input-error"></span>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="form-group_label" for="email">E-mail:</label>
+                  <div class="form-group_container">
+                     <input name="email" class="form-group_input" type="email" required />
+                     <span class="form-group_input-error"></span>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="form-group_label" for="telefon">Телефон:</label>
+                  <div class="form-group_container">
+                     <input name="telefon" type="text" placeholder="+7 888 888 88 88" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" maxlength="12" required />
                      <span class="form-group_input-error"></span>
                   </div>
                </div>

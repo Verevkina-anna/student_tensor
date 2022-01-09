@@ -91,6 +91,7 @@ const $studentTemplate = document.querySelector('#studentTemplate').content;
 const $popup = document.querySelector('#studentPopup');
 const $studentButton = document.querySelector('.header_logo');
 const $popupCloseButton = document.querySelector('.popup_close');
+const $cardCloseButton = document.querySelector('.card_close');
 const studentApi = new Api('http://localhost:3000/students', { 'Content-Type': 'application/json' });
 const studentForm = new Form(document.querySelector('.student-form'));
 
@@ -114,7 +115,7 @@ const hidePopup = () => {
       }
       const hideStudentCard = () => {
          $card.classList.remove('opened');
-         cardForm.closeForm();
+         //cardForm.closeForm();
       }
 //
 
@@ -161,7 +162,9 @@ const renderItem = (item) => {
             course: event.target.elements[2].value,
             //course: item.course,
             city: event.target.elements[3].value,
-            avatar_url: event.target.elements[4].value
+            avatar_url: event.target.elements[4].value,
+            email: event.target.elements[5].value,
+            telefon: event.target.elements[6].value
          };
 
          studentApi.updateItem(item.id, data).then(() => {
@@ -173,7 +176,9 @@ const renderItem = (item) => {
          university: item.university,
          course: item.course+"курс",
          city: item.city,
-         avatar_url: item.avatar_url
+         avatar_url: item.avatar_url,
+         email: item.email,
+         telefon: item.telefon
       });
    });
    // card
@@ -188,17 +193,23 @@ const renderItem = (item) => {
              university:event.target.elements[1].value,
              course: event.target.elements[2].value,
              city: event.target.elements[3].value,
-             avatar_url: event.target.elements[4].value
+             avatar_url: event.target.elements[4].value,
+             email: event.target.elements[5].value,
+             telefon: event.target.elements[6].value
           };
 
-       studentApi.updateItem(item.id, data).then((data) => renderList(data));
+       studentApi.getItem(item.id, data).then((data) => renderList(data));
        hideStudentCard();
     },{
+      email: item.email,
       name: item.name,
       university: item.university,
       course: item.course,
+      telefon: item.telefon,
       city: item.city,
       avatar_url: item.avatar_url
+     
+      
    });
  });
 //
@@ -217,6 +228,8 @@ $studentButton.addEventListener('click', () => {
          //course: item.course,
          city: event.target.elements[3].value,
          avatar_url: event.target.elements[4].value,
+         email: event.target.elements[5].value,
+         telefon: event.target.elements[6].value
       };
 
       studentApi.createItem(data).then(() => {
@@ -226,10 +239,15 @@ $studentButton.addEventListener('click', () => {
    });
 });
  
+$cardCloseButton.addEventListener('click', () => {
+   hidePopup();
+   hideStudentCard();
+});
 
 
 $popupCloseButton.addEventListener('click', () => {
    hidePopup();
+   hideStudentCard();
 });
 
 
