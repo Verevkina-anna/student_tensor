@@ -137,6 +137,14 @@ img{
    background-image: url("../src/pngwing.png");
 }
 
+.header_logo:hover,
+.button_delete:hover,
+.button_edit:hover,
+.button_card:hover{
+   box-shadow: 0 10px #E1EDF5;
+}
+
+
 @media screen and (min-width: 768px) {
    .button_delete,
    .button_edit,
